@@ -2,8 +2,8 @@
 ## React + Vite + Tailwind
 
 **This project was developed by**
-Booranasak Kanthong *Web Developer*
-Thanawan Phanphrom *UX/UI Designer*
+   * Booranasak Kanthong *Web Developer*
+   * Thanawan Phanphrom *UX/UI Designer*
 
 * Features
     * Timer that count up to 60 seconds
