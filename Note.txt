@@ -1,0 +1,66 @@
+import { useEffect, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+
+function App() {
+  let buttonStart = 'bg-[#9eba6e] p-1   pb-2 px-6 m-3 max-w-fit rounded-full text-2xl font-medium'
+  let buttonReset = 'bg-[#da9f88] p-1   pb-2 px-5 m-3 max-w-fit rounded-full text-2xl font-medium'
+  //State for timer
+  const [elapsedSeconds, setElapsedSeconds] = useState(0)
+  const [startTime, setStartTime] = useState(Date.now)
+  //State for Button
+  const [isToggled, setIsToggled] = useState(true)
+  // const [buttonChange, setButtonChange] = useState(buttonStart)
+
+  useEffect(() => {
+    let interval = null;
+    if (!isToggled) {
+        interval = setInterval(() => {
+        const seconds = (Math.floor((Date.now() - startTime)/1000));
+        setElapsedSeconds(() => {
+          if (seconds > 60) {
+            setStartTime(Date.now)
+            return 0;
+          }
+          return seconds;
+        });
+      }, 1000);
+    }  
+    return () => {
+      clearInterval(interval);
+    }
+  }, [startTime])
+  
+  
+  let handleChange = () => { 
+    //toggle button function
+    setIsToggled(!isToggled);
+    console.log('toggle status: ', isToggled)
+    // setButtonChange(isToggled?buttonStart: buttonReset)
+
+    //set timer
+    setStartTime(Date.now()); 
+    setElapsedSeconds(0)
+  }
+
+
+  return (
+    <>
+      <div className='content-center h-screen bg-[#020b42] text-white'>
+        <div className='grid grid-cols-1 justify-items-center content-center'>
+          <div className='text-9xl text font-medium mb-2'>{elapsedSeconds}</div>
+          <button onClick={handleChange} className= {isToggled? buttonStart : buttonReset} >{isToggled ? 'Start' : 'Reset'}</button>
+          {/* <button onClick={handleChange} className = {buttonChange} >{isToggled ? 'Start' : 'Reset'}</button> */}
+          {/* <p>{buttonChange}</p> */}                
+        </div>  
+      </div>
+    </>
+  )
+}
+
+export default App
+
+=================================
+before clean up
