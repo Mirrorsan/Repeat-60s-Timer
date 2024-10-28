@@ -51,7 +51,8 @@ function App() {
         <div className='grid grid-cols-1 justify-items-center content-center'>
           <div className='text-[138px] text font-medium '>{elapsedSeconds}</div>
           <button onClick={handleChange} className= {isToggled? buttonStart : buttonReset} >{isToggled ? 'Start' : 'Reset'}</button>
-        </div>  
+        </div>
+        <center>test</center> 
       </div>
     </>
   )
