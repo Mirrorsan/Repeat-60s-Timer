@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 
 function App() {
-  let buttonStart = 'bg-[#9eba6e] p-1   pb-2 px-6 m-3 max-w-fit rounded-full text-2xl font-medium'
-  let buttonReset = 'bg-[#da9f88] p-1   pb-2 px-5 m-3 max-w-fit rounded-full text-2xl font-medium'
+  let buttonStart = 'bg-[#9eba6e] p-1   pb-2 px-6  max-w-fit rounded-full text-2xl font-medium'
+  let buttonReset = 'bg-[#da9f88] p-1   pb-2 px-5  max-w-fit rounded-full text-2xl font-medium'
   //State for timer
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
   const [startTime, setStartTime] = useState(Date.now)
@@ -53,7 +49,7 @@ function App() {
     <>
       <div className='content-center h-screen bg-[#020b42] text-white'>
         <div className='grid grid-cols-1 justify-items-center content-center'>
-          <div className='text-9xl text font-medium mb-2'>{elapsedSeconds}</div>
+          <div className='text-[138px] text font-medium '>{elapsedSeconds}</div>
           <button onClick={handleChange} className= {isToggled? buttonStart : buttonReset} >{isToggled ? 'Start' : 'Reset'}</button>
         </div>  
       </div>
