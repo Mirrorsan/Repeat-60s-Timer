@@ -52,7 +52,6 @@ function App() {
           <div className='text-[138px] text font-medium '>{elapsedSeconds}</div>
           <button onClick={handleChange} className= {isToggled? buttonStart : buttonReset} >{isToggled ? 'Start' : 'Reset'}</button>
         </div>
-        <center>Funcking test!</center> 
       </div>
     </>
   )
